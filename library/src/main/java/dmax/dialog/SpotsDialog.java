@@ -8,15 +8,14 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 /**
  * Created by Maxim Dybarsky | maxim.dybarskyy@gmail.com
  * on 13.01.15 at 14:22
  */
-public class DotsDialog  extends AlertDialog {
+public class SpotsDialog extends AlertDialog {
 
-    private static final int COUNT = 5;
+    private static final int DEFAULT_COUNT = 6;
     private static final int DELAY = 200;
     private static final int DURATION = 1500;
 
@@ -30,15 +29,15 @@ public class DotsDialog  extends AlertDialog {
         }
     };
 
-    public DotsDialog(Context context) {
-        super(context);
+    public SpotsDialog(Context context) {
+        this(context, R.style.Default);
     }
 
-    public DotsDialog(Context context, int theme) {
+    public SpotsDialog(Context context, int theme) {
         super(context, theme);
     }
 
-    public DotsDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
+    public SpotsDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
         super(context, cancelable, cancelListener);
     }
 
@@ -48,8 +47,6 @@ public class DotsDialog  extends AlertDialog {
 
         setContentView(R.layout.dialog);
         setCanceledOnTouchOutside(false);
-
-        ((TextView) findViewById(R.id.title)).setText(R.string.importing);
 
         initProgress();
     }
@@ -74,10 +71,10 @@ public class DotsDialog  extends AlertDialog {
     private void initProgress() {
         FrameLayout progress = (FrameLayout) findViewById(R.id.progress);
 
-        spots = new AnimatedView[COUNT];
+        spots = new AnimatedView[DEFAULT_COUNT];
         int size = getContext().getResources().getDimensionPixelSize(R.dimen.spot_size);
         int progressWidth = getContext().getResources().getDimensionPixelSize(R.dimen.progress_width);
-        for (int i = 0; i < COUNT; i++) {
+        for (int i = 0; i < DEFAULT_COUNT; i++) {
             AnimatedView v = new AnimatedView(getContext());
             v.setBackgroundResource(R.drawable.spot);
             v.setTarget(progressWidth);
@@ -88,8 +85,8 @@ public class DotsDialog  extends AlertDialog {
     }
 
     private Animator[] createAnimations() {
-        Animator[] animators = new Animator[COUNT];
-        for (int i = 0; i < COUNT; i++) {
+        Animator[] animators = new Animator[DEFAULT_COUNT];
+        for (int i = 0; i < DEFAULT_COUNT; i++) {
             Animator move = ObjectAnimator.ofFloat(spots[i], "xFactor", 0, 1);
             move.setDuration(DURATION);
             move.setInterpolator(new HesitateInterpolator());
