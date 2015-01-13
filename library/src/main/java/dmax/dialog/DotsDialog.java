@@ -34,6 +34,14 @@ public class DotsDialog  extends AlertDialog {
         super(context);
     }
 
+    public DotsDialog(Context context, int theme) {
+        super(context, theme);
+    }
+
+    public DotsDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
+        super(context, cancelable, cancelListener);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

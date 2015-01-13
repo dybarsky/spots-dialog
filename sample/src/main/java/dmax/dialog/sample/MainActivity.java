@@ -15,7 +15,6 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        new DotsDialog(this).show();
-
+        new DotsDialog(this, android.R.style.Theme_Material_Light_Dialog_Alert).show();
     }
 }
