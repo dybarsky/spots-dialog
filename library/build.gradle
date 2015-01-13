@@ -1,4 +1,4 @@
-ext.ARTIFACT_ID = "dots-dialog"
+ext.ARTIFACT_ID = "spots-dialog"
 
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
@@ -83,17 +83,17 @@ uploadArchives {
             }
             pom.project {
                 groupId "com.github.d-max"
-                artifactId "dots-dialog"
+                artifactId "spots-dialog"
                 version VERSION_NAME
                 packaging "aar"
-                name "dots progress dialog"
-                description "Android AlertDialog with moving dots progress indicator"
-                url "https://github.com/d-max/dots-dialog"
+                name "spots progress dialog"
+                description "Android AlertDialog with moving spots progress indicator"
+                url "https://github.com/d-max/spots-dialog"
 
                 scm {
-                    url "https://github.com/d-max/dots-dialog"
-                    connection "scm:git@github.com:d-max/dots-dialog.git"
-                    developerConnection "scm:git@github.com:d-max/dots-dialog.git"
+                    url "https://github.com/d-max/spots-dialog"
+                    connection "scm:git@github.com:d-max/spots-dialog.git"
+                    developerConnection "scm:git@github.com:d-max/spots-dialog.git"
                 }
 
                 licenses {
