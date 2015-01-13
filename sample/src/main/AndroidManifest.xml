@@ -7,8 +7,9 @@
 
     <application>
         <activity android:name=".MainActivity"
+                  android:label="@string/app_name"
                   android:theme="@android:style/Theme.Material.Light"
-                  android:label="Dialog sample">
+                  android:icon="@drawable/ic_launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

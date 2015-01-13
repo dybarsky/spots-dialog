@@ -3,7 +3,7 @@ package dmax.dialog.sample;
 import android.app.Activity;
 import android.os.Bundle;
 
-import dmax.dialog.DotsDialog;
+import dmax.dialog.SpotsDialog;
 
 /**
  * Created by Maxim Dybarsky | maxim.dybarskyy@gmail.com
@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        new DotsDialog(this, android.R.style.Theme_Material_Light_Dialog_Alert).show();
+//        new SpotsDialog(this).show();
+        new SpotsDialog(this, R.style.Custom).show();
     }
 }
