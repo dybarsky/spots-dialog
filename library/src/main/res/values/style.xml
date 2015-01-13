@@ -4,5 +4,6 @@
         <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
         <item name="DialogTitleText">Loading…</item>
         <item name="DialogSpotColor">@android:color/holo_blue_dark</item>
+        <item name="DialogSpotCount">5</item>
     </style>
 </resources>

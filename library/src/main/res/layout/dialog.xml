@@ -14,7 +14,7 @@
         android:textAppearance="?attr/DialogTitleAppearance"
         android:text="?attr/DialogTitleText"/>
 
-    <FrameLayout
+    <dmax.dialog.ProgressLayout
         android:id="@+id/progress"
         android:layout_width="@dimen/progress_width"
         android:layout_height="wrap_content"
