@@ -7,7 +7,6 @@ Android AlertDialog with mowing spots progress indicator packed as android libra
 ![Example Image1][1]
 
 ###Usage
-=====
 
 The library available in maven central repository. You can get it using:
 ```groovy
@@ -28,7 +27,6 @@ dialog.dismiss();
 ```
 
 ###Customization
-============
 
 Use android styles to customize the dialog.
 Next custom attributes provided:
