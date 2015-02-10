@@ -54,15 +54,6 @@ Provide you own style resource:
 </resources>
 ```
 
-On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround just override color in your resources.
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="spots_dialog_color">@color/your_color_value</color>
-</resources>
-```
-
-
 Pass it into constuctor:
 ```java
 new SpotsDialog(context, R.style.Custom).show();
@@ -71,6 +62,16 @@ new SpotsDialog(context, R.style.Custom).show();
 Result:
 
 ![Example Image1][2]
+
+
+*Note:*
+On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround just override color in your resources.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="spots_dialog_color">@color/your_color_value</color>
+</resources>
+```
 
 ===========
 
