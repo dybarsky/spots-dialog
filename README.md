@@ -64,7 +64,7 @@ Result:
 ![Example Image1][2]
 
 
-*Note:*
+**Note:**
 On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround just override color in your resources.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
