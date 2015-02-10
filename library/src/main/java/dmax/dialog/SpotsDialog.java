@@ -29,7 +29,7 @@ public class SpotsDialog extends AlertDialog {
     };
 
     public SpotsDialog(Context context) {
-        this(context, R.style.Default);
+        this(context, R.style.SpotsDialogDefault);
     }
 
     public SpotsDialog(Context context, int theme) {
