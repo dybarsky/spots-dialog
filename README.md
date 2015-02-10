@@ -14,7 +14,7 @@ Android AlertDialog with mowing spots progress indicator packed as android libra
 The library available in maven central repository. You can get it using:
 ```groovy
 dependencies {
-    compile 'com.github.d-max:spots-dialog:0.1+@aar'
+    compile 'com.github.d-max:spots-dialog:0.2@aar'
 }
 ```
 Javadoc and sources package [classifiers][3] available too.
@@ -53,6 +53,15 @@ Provide you own style resource:
     </style>
 </resources>
 ```
+
+On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround just override color in your resources.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="spots_dialog_color">@color/your_color_value</color>
+</resources>
+```
+
 
 Pass it into constuctor:
 ```java
