@@ -2,18 +2,17 @@ apply plugin: 'com.android.application'
 
 repositories {
     mavenCentral()
-//    maven { url "https://oss.sonatype.org/content/repositories/releases/" }
 }
 
 android {
-    compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
+    compileSdkVersion COMPILE_SDK_VERSION
     buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
-        targetSdkVersion Integer.parseInt(TARGET_SDK_VERSION)
-        versionCode Integer.parseInt(VERSION_CODE)
-        versionName VERSION_NAME
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode SAMPLE_VERSION_CODE
+        versionName SAMPLE_VERSION_NAME
     }
 
     compileOptions {

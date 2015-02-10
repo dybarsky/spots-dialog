@@ -1,5 +1,3 @@
-ext.ARTIFACT_ID = "spots-dialog"
-
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 apply plugin: 'signing'
@@ -7,14 +5,14 @@ apply plugin: 'signing'
 // configure android plugin
 
 android {
-    compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
+    compileSdkVersion COMPILE_SDK_VERSION
     buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
-        targetSdkVersion Integer.parseInt(TARGET_SDK_VERSION)
-        versionCode Integer.parseInt(VERSION_CODE)
-        versionName VERSION_NAME
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode LIBRARY_VERSION_CODE
+        versionName LIBRARY_VERSION_NAME
     }
 
     compileOptions {
@@ -41,14 +39,14 @@ task javadocGenerate(type: Javadoc) {
 task javadocPackage(dependsOn: javadocGenerate, type: Jar) {
     baseName = ARTIFACT_ID
     classifier = "javadoc"
-    version VERSION_NAME
+    version LIBRARY_VERSION_NAME
     from tasks.javadocGenerate.destinationDir
 }
 
 task sourcePackage(type: Jar) {
     baseName = ARTIFACT_ID
     classifier = "sources"
-    version VERSION_NAME
+    version LIBRARY_VERSION_NAME
     from android.sourceSets.main.java.srcDirs
 }
 
@@ -65,7 +63,7 @@ signing {
 // configure maven plugin
 
 def getRepoUrl() {
-    if (VERSION_NAME.contains("SNAPSHOT")) {
+    if (LIBRARY_VERSION_NAME.contains("SNAPSHOT")) {
         return "https://oss.sonatype.org/content/repositories/snapshots/"
     } else {
         return "https://oss.sonatype.org/service/local/staging/deploy/maven2"
@@ -84,7 +82,7 @@ uploadArchives {
             pom.project {
                 groupId "com.github.d-max"
                 artifactId "spots-dialog"
-                version VERSION_NAME
+                version LIBRARY_VERSION_NAME
                 packaging "aar"
                 name "spots progress dialog"
                 description "Android AlertDialog with moving spots progress indicator"
