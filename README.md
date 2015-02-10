@@ -1,6 +1,6 @@
 # Spots  progress dialog
 
-[![Maven](https://img.shields.io/badge/maven-0.1-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.1%7Caar)
+[![Maven](https://img.shields.io/badge/maven-0.2-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.2%7Caar)
 [![Blog Post](https://img.shields.io/badge/blog-post-yellow.svg)](http://dybarsky.blogspot.com/2015/01/spots-progress-dialog.html)
 
 Android AlertDialog with mowing spots progress indicator packed as android library.
@@ -67,6 +67,9 @@ Result:
 
 ###Release notes
 
+**[v0.2, Feb 10th 2015][7]**
+* Fix issue on pre-lollipop
+
 **[v0.1, Jan 15th 2015][6]**
 * Style customization
 
@@ -108,3 +111,4 @@ Maxim Dybarsky - http://d-max.info
 [4]: library/src/main/java/dmax/dialog/SpotsDialog.java
 [5]: http://developer.android.com/reference/android/app/AlertDialog.html
 [6]: https://github.com/d-max/spots-dialog/releases/tag/v0.1
+[7]: https://github.com/d-max/spots-dialog/releases/tag/v0.2
