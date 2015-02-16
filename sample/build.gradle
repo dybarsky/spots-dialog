@@ -9,18 +9,51 @@ android {
     buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion MIN_SDK_VERSION
-        targetSdkVersion TARGET_SDK_VERSION
-        versionCode SAMPLE_VERSION_CODE
         versionName SAMPLE_VERSION_NAME
+        targetSdkVersion 21
+    }
+
+    productFlavors {
+        lollipop {
+            minSdkVersion 21
+            versionCode SAMPLE_VERSION_CODE_LOLLIPOP
+        }
+        kitkat {
+            minSdkVersion 15
+            versionCode SAMPLE_VERSION_CODE_KITKAT
+        }
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_6
         targetCompatibility JavaVersion.VERSION_1_6
     }
+
+    signingConfigs {
+        release {
+            storeFile file(System.getProperty("user.home") + "/.android/dmax.keystore")
+            storePassword keystorePassword
+            keyAlias "dmax"
+            keyPassword keystorePassword
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+        xmlReport false
+        htmlReport true
+        checkReleaseBuilds true
+    }
 }
 
 dependencies {
-    compile 'com.github.d-max:spots-dialog:0.1'
+    compile 'com.github.d-max:spots-dialog:0.2'
 }
