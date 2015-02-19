@@ -2,6 +2,7 @@
 
 [![Maven](https://img.shields.io/badge/maven-0.2-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.2%7Caar)
 [![Blog Post](https://img.shields.io/badge/blog-post-yellow.svg)](http://dybarsky.blogspot.com/2015/01/spots-progress-dialog.html)
+[![PlayStore](https://img.shields.io/badge/play-store-blue.svg)](https://play.google.com/store/apps/details?id=dmax.dialog.sample)
 
 Android AlertDialog with mowing spots progress indicator packed as android library.
 
