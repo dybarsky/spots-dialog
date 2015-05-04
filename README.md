@@ -92,7 +92,7 @@ On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround jus
 
 ###Developed By
 
-Maxim Dybarsky - http://d-max.info
+Maksym Dybarskyi - http://d-max.info
 
 ===========
 
