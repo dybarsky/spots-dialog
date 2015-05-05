@@ -19,7 +19,7 @@ Android AlertDialog with mowing spots progress indicator packed as android libra
 The library available in maven central repository. You can get it using:
 ```groovy
 dependencies {
-    compile 'com.github.d-max:spots-dialog:0.2@aar'
+    compile 'com.github.d-max:spots-dialog:0.3@aar'
 }
 ```
 Javadoc and sources package [classifiers][3] available too.
@@ -82,6 +82,10 @@ On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround jus
 
 ###Release notes
 
+**[v0.3, May 5th 2015][8]**
+* Stop animation when dismiss dialog
+
+
 **[v0.2, Feb 10th 2015][7]**
 * Fix issue on pre-lollipop
 
@@ -127,3 +131,4 @@ Maksym Dybarskyi - http://d-max.info
 [5]: http://developer.android.com/reference/android/app/AlertDialog.html
 [6]: https://github.com/d-max/spots-dialog/releases/tag/v0.1
 [7]: https://github.com/d-max/spots-dialog/releases/tag/v0.2
+[8]: https://github.com/d-max/spots-dialog/releases/tag/v0.3
