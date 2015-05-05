@@ -1,6 +1,6 @@
 # Spots  progress dialog
 
-[![Maven](https://img.shields.io/badge/maven-0.2-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.2%7Caar)
+[![Maven](https://img.shields.io/badge/maven-0.3-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.3%7Caar)
 &nbsp;&nbsp;
 [![Blog Post](https://img.shields.io/badge/blogger-post-yellow.svg)](http://dybarsky.blogspot.com/2015/01/spots-progress-dialog.html)
 &nbsp;&nbsp;
