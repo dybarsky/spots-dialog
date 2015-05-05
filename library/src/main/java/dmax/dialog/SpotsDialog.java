@@ -1,8 +1,6 @@
 package dmax.dialog;
 
 import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -19,14 +17,7 @@ public class SpotsDialog extends AlertDialog {
 
     private int size;
     private AnimatedView[] spots;
-    private Animator[] animators;
-
-    private AnimatorListenerAdapter listener = new AnimatorListenerAdapter() {
-        @Override
-        public void onAnimationEnd(Animator animation) {
-            animate();
-        }
-    };
+    private AnimatorPlayer animator;
 
     public SpotsDialog(Context context) {
         this(context, R.style.SpotsDialogDefault);
@@ -54,18 +45,18 @@ public class SpotsDialog extends AlertDialog {
     protected void onStart() {
         super.onStart();
 
-        animate();
+        animator = new AnimatorPlayer(createAnimations());
+        animator.play();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        animator.stop();
     }
 
     //~
-
-    private void animate() {
-        if (animators == null) animators = createAnimations();
-        AnimatorSet set = new AnimatorSet();
-        set.playTogether(animators);
-        set.addListener(listener);
-        set.start();
-    }
 
     private void initProgress() {
         ProgressLayout progress = (ProgressLayout) findViewById(R.id.progress);
