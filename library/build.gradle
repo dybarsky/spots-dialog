@@ -105,7 +105,7 @@ uploadArchives {
                 developers {
                     developer {
                         id "d-max"
-                        name "Maxim Dybarsky"
+                        name "Maksym Dybarskyi"
                         email "maxim.dybarskyy@gmail.com"
                     }
                 }
