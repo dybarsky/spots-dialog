@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 repositories {
     mavenCentral()
+    maven { url "http://oss.sonatype.org/content/groups/staging" }
 }
 
 android {
@@ -55,5 +56,6 @@ android {
 }
 
 dependencies {
-    compile 'com.github.d-max:spots-dialog:0.2'
+    compile 'com.github.d-max:spots-dialog:0.3'
+    //compile project(':library')
 }
