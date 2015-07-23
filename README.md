@@ -1,6 +1,6 @@
 # Spots  progress dialog
 
-[![Maven](https://img.shields.io/badge/maven-0.3-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.3%7Caar)
+[![Maven](https://img.shields.io/badge/maven-0.4-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.4%7Caar)
 &nbsp;&nbsp;
 [![Blog Post](https://img.shields.io/badge/blogger-post-yellow.svg)](http://dybarsky.blogspot.com/2015/01/spots-progress-dialog.html)
 &nbsp;&nbsp;
@@ -19,7 +19,7 @@ Android AlertDialog with mowing spots progress indicator packed as android libra
 The library available in maven central repository. You can get it using:
 ```groovy
 dependencies {
-    compile 'com.github.d-max:spots-dialog:0.3@aar'
+    compile 'com.github.d-max:spots-dialog:0.4@aar'
 }
 ```
 Javadoc and sources package [classifiers][3] available too.
@@ -68,6 +68,11 @@ Result:
 
 ![Example Image1][2]
 
+If you need to change just a dialogs message, use constructor:
+```java
+new SpotsDialog(context, "Завантаження").show();
+```
+
 
 **Note:**
 On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround just override color in your resources.
@@ -81,6 +86,9 @@ On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround jus
 ===========
 
 ###Release notes
+
+**[v0.4, July 23th 2015][9]**
+* Add custom message constructor
 
 **[v0.3, May 5th 2015][8]**
 * Stop animation when dismiss dialog
@@ -132,3 +140,4 @@ Maksym Dybarskyi - http://d-max.info
 [6]: https://github.com/d-max/spots-dialog/releases/tag/v0.1
 [7]: https://github.com/d-max/spots-dialog/releases/tag/v0.2
 [8]: https://github.com/d-max/spots-dialog/releases/tag/v0.3
+[9]: https://github.com/d-max/spots-dialog/releases/tag/v0.4
