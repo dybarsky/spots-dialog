@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.TextView;
 
 /**
  * Created by Maxim Dybarsky | maxim.dybarskyy@gmail.com
@@ -18,9 +19,15 @@ public class SpotsDialog extends AlertDialog {
     private int size;
     private AnimatedView[] spots;
     private AnimatorPlayer animator;
+    private CharSequence message;
 
     public SpotsDialog(Context context) {
         this(context, R.style.SpotsDialogDefault);
+    }
+
+    public SpotsDialog(Context context, CharSequence message) {
+        this(context);
+        this.message = message;
     }
 
     public SpotsDialog(Context context, int theme) {
@@ -38,6 +45,7 @@ public class SpotsDialog extends AlertDialog {
         setContentView(R.layout.dialog);
         setCanceledOnTouchOutside(false);
 
+        initMessage();
         initProgress();
     }
 
@@ -57,6 +65,12 @@ public class SpotsDialog extends AlertDialog {
     }
 
     //~
+
+    private void initMessage() {
+        if (message != null && message.length() > 0) {
+            ((TextView) findViewById(R.id.title)).setText(message);
+        }
+    }
 
     private void initProgress() {
         ProgressLayout progress = (ProgressLayout) findViewById(R.id.progress);
