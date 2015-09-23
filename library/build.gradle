@@ -1,115 +1,19 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
-apply plugin: 'signing'
-
-// configure android plugin
 
 android {
-    compileSdkVersion COMPILE_SDK_VERSION
-    buildToolsVersion BUILD_TOOLS_VERSION
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
-        minSdkVersion MIN_SDK_VERSION
-        targetSdkVersion TARGET_SDK_VERSION
-        versionCode LIBRARY_VERSION_CODE
-        versionName LIBRARY_VERSION_NAME
+        minSdkVersion 10
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_6
-        targetCompatibility JavaVersion.VERSION_1_6
-    }
-}
-
-
-// tasks for packaging source and javadocs artifacts
-
-task javadocGenerate(type: Javadoc) {
-    // prints javadoc outputs when info logging level set
-    logging.captureStandardError LogLevel.INFO
-
-    description = "Generates javadoc"
-    source = android.sourceSets.main.java.srcDirs
-
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    exclude '**/BuildConfig.java'
-    exclude '**/R.java'
-}
-
-task javadocPackage(dependsOn: javadocGenerate, type: Jar) {
-    baseName = ARTIFACT_ID
-    classifier = "javadoc"
-    version LIBRARY_VERSION_NAME
-    from tasks.javadocGenerate.destinationDir
-}
-
-task sourcePackage(type: Jar) {
-    baseName = ARTIFACT_ID
-    classifier = "sources"
-    version LIBRARY_VERSION_NAME
-    from android.sourceSets.main.java.srcDirs
-}
-
-//configure sign plugin
-
-artifacts {
-    archives javadocPackage, sourcePackage
-}
-
-signing {
-    sign configurations.archives
-}
-
-// configure maven plugin
-
-def getRepoUrl() {
-    if (LIBRARY_VERSION_NAME.contains("SNAPSHOT")) {
-        return "https://oss.sonatype.org/content/repositories/snapshots/"
-    } else {
-        return "https://oss.sonatype.org/service/local/staging/deploy/maven2"
-    }
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment {
-                MavenDeployment deployment -> signing.signPom(deployment)
-            }
-            repository(url: getRepoUrl()) {
-                authentication(userName: OSS_USERNAME, password: OSS_PASSWORD)
-            }
-            pom.project {
-                groupId "com.github.d-max"
-                artifactId "spots-dialog"
-                version LIBRARY_VERSION_NAME
-                packaging "aar"
-                name "spots progress dialog"
-                description "Android AlertDialog with moving spots progress indicator"
-                url "https://github.com/d-max/spots-dialog"
-
-                scm {
-                    url "https://github.com/d-max/spots-dialog"
-                    connection "scm:git@github.com:d-max/spots-dialog.git"
-                    developerConnection "scm:git@github.com:d-max/spots-dialog.git"
-                }
-
-                licenses {
-                    license {
-                        name "MIT License"
-                        url "http://www.opensource.org/licenses/mit-license.php"
-                        distribution "repo"
-                    }
-                }
-
-                developers {
-                    developer {
-                        id "d-max"
-                        name "Maksym Dybarskyi"
-                        email "maxim.dybarskyy@gmail.com"
-                    }
-                }
-            }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
