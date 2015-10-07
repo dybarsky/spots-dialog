@@ -47,7 +47,7 @@ public class SpotsDialog extends AlertDialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.dialog);
+        setContentView(R.layout.dmax_spots_dialog);
         setCanceledOnTouchOutside(false);
 
         initMessage();
@@ -73,12 +73,12 @@ public class SpotsDialog extends AlertDialog {
 
     private void initMessage() {
         if (message != null && message.length() > 0) {
-            ((TextView) findViewById(R.id.title)).setText(message);
+            ((TextView) findViewById(R.id.dmax_spots_title)).setText(message);
         }
     }
 
     private void initProgress() {
-        ProgressLayout progress = (ProgressLayout) findViewById(R.id.progress);
+        ProgressLayout progress = (ProgressLayout) findViewById(R.id.dmax_spots_progress);
         size = progress.getSpotsCount();
 
         spots = new AnimatedView[size];
@@ -86,7 +86,7 @@ public class SpotsDialog extends AlertDialog {
         int progressWidth = getContext().getResources().getDimensionPixelSize(R.dimen.progress_width);
         for (int i = 0; i < spots.length; i++) {
             AnimatedView v = new AnimatedView(getContext());
-            v.setBackgroundResource(R.drawable.spot);
+            v.setBackgroundResource(R.drawable.dmax_spots_spot);
             v.setTarget(progressWidth);
             v.setXFactor(-1f);
             progress.addView(v, size, size);
