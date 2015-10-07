@@ -23,4 +23,10 @@
         android:layout_height="wrap_content"
         android:text="@string/show_message"/>
 
+    <Button
+        android:id="@android:id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_message_style"/>
+
 </LinearLayout>

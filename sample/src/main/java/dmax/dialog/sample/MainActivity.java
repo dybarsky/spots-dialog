@@ -21,6 +21,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         findViewById(android.R.id.button1).setOnClickListener(this);
         findViewById(android.R.id.button2).setOnClickListener(this);
         findViewById(android.R.id.button3).setOnClickListener(this);
+        findViewById(android.R.id.closeButton).setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +35,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case android.R.id.button3:
                 new SpotsDialog(this, "Custom message").show();
+                break;
+            case android.R.id.closeButton:
+                new SpotsDialog(this, "Custom message & style", R.style.Custom).show();
                 break;
         }
     }
