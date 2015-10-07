@@ -30,6 +30,11 @@ public class SpotsDialog extends AlertDialog {
         this.message = message;
     }
 
+    public SpotsDialog(Context context, CharSequence message, int theme) {
+        this(context, theme);
+        this.message = message;
+    }
+
     public SpotsDialog(Context context, int theme) {
         super(context, theme);
     }
