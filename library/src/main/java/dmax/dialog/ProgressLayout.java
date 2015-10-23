@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
  * Created by Maxim Dybarsky | maxim.dybarskyy@gmail.com
  * on 13.01.15 at 17:34
  */
-class ProgressLayout extends FrameLayout {
+public class ProgressLayout extends FrameLayout {
 
     private static final int DEFAULT_COUNT = 5;
     private int spotsCount;
