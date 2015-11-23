@@ -1,6 +1,6 @@
 # Spots  progress dialog
 
-[![Maven](https://img.shields.io/badge/maven-0.6-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.6%7Caar)
+[![Maven](https://img.shields.io/badge/maven-0.7-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.7%7Caar)
 &nbsp;&nbsp;
 [![Blog Post](https://img.shields.io/badge/blogger-post-yellow.svg)](http://dybarsky.blogspot.com/2015/01/spots-progress-dialog.html)
 &nbsp;&nbsp;
@@ -87,6 +87,9 @@ On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround jus
 
 ###Release notes
 
+**[v0.7, November 23th 2015][10]**
+* Override message setter
+
 **[v0.4, July 23th 2015][9]**
 * Add custom message constructor
 
@@ -141,3 +144,4 @@ Maksym Dybarskyi - http://d-max.info
 [7]: https://github.com/d-max/spots-dialog/releases/tag/v0.2
 [8]: https://github.com/d-max/spots-dialog/releases/tag/v0.3
 [9]: https://github.com/d-max/spots-dialog/releases/tag/v0.4
+[10]: https://github.com/d-max/spots-dialog/releases/tag/v0.7
