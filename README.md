@@ -19,14 +19,14 @@ Android AlertDialog with mowing spots progress indicator packed as android libra
 The library available in maven central repository. You can get it using:
 ```groovy
 dependencies {
-    compile 'com.github.d-max:spots-dialog:0.4@aar'
+    compile 'com.github.d-max:spots-dialog:0.7@aar'
 }
 ```
 Javadoc and sources package [classifiers][3] available too.
 
 **Note:** The library requires minimum API level 15.
 
-[SpotsDialog][4] class is an inheritor of a AlertDialog class. You can use it just like simple [AlertDialog][5]. For example: 
+[SpotsDialog][4] class is an inheritor of a AlertDialog class. You can use it just like simple [AlertDialog][5]. For example:
 ```java
 AlertDialog dialog = new SpotsDialog(context);
 dialog.show();
