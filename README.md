@@ -8,7 +8,7 @@
 &nbsp;&nbsp;
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Spots%20progress%20dialog-lightgrey.svg?style=flat)](http://android-arsenal.com/details/1/1743)
 
-Android AlertDialog with mowing spots progress indicator packed as android library.
+Android AlertDialog with moving spots progress indicator packed as android library.
 
 ![Example Image1][1]
 
