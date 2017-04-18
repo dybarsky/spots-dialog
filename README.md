@@ -14,7 +14,7 @@ Android AlertDialog with moving spots progress indicator packed as android libra
 
 ===========
 
-###Usage
+### Usage
 
 The library available in maven central repository. You can get it using:
 ```groovy
@@ -35,7 +35,7 @@ dialog.dismiss();
 ```
 ===========
 
-###Customization
+### Customization
 
 Use android styles to customize the dialog.
 Next custom attributes provided:
@@ -85,7 +85,7 @@ On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround jus
 
 ===========
 
-###Release notes
+### Release notes
 
 **[v0.7, November 23th 2015][10]**
 * Override message setter
@@ -105,13 +105,13 @@ On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround jus
 
 ===========
 
-###Developed By
+### Developed By
 
 Maksym Dybarskyi - http://d-max.info
 
 ===========
 
-###License
+### License
 
 	The MIT License (MIT)
 	Copyright © 2015 Maxim Dybarsky
