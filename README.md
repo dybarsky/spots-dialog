@@ -33,6 +33,15 @@ dialog.show();
 ...
 dialog.dismiss();
 ```
+
+**Attention!**
+If you're using *proguard*, add this code to your rules file:
+```
+-keep class dmax.dialog.** {
+    *;
+}
+```
+
 ===========
 
 ### Customization
