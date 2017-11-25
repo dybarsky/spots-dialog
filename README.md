@@ -28,7 +28,7 @@ Javadoc and sources package [classifiers][3] available too.
 
 [SpotsDialog][4] class is an inheritor of a AlertDialog class. You can use it just like simple [AlertDialog][5]. For example:
 ```java
-AlertDialog dialog = new SpotsDialog(context);
+SpotsDialog dialog = new SpotsDialog(context);
 dialog.show();
 ...
 dialog.dismiss();
