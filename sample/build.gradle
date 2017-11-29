@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 repositories {
     google()
     jcenter()
+    maven {
+        url  "https://dl.bintray.com/d-max/spots-dialog"
+    }
 }
 
 android {
@@ -60,6 +63,6 @@ android {
 }
 
 dependencies {
-//    compile 'com.github.d-max:spots-dialog:0.8'
-    compile project(':library')
+//    compile 'com.github.d-max:spots-dialog:1.0'
+    implementation project(':library')
 }

@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 /**
@@ -19,7 +20,7 @@ public class SpotsDialog extends AlertDialog {
         private String message;
         private int messageId;
         private int themeId;
-        private boolean cancelable;
+        private boolean cancelable = true; // default dialog behaviour
         private OnCancelListener cancelListener;
 
         public Builder setContext(Context context) {
@@ -74,8 +75,9 @@ public class SpotsDialog extends AlertDialog {
     private SpotsDialog(Context context, String message, int theme, boolean cancelable, OnCancelListener cancelListener) {
         super(context, theme);
         this.message = message;
+
         setCancelable(cancelable);
-        setOnCancelListener(cancelListener);
+        if (cancelListener != null) setOnCancelListener(cancelListener);
     }
 
     @Override
@@ -92,6 +94,8 @@ public class SpotsDialog extends AlertDialog {
     @Override
     protected void onStart() {
         super.onStart();
+
+        for (AnimatedView view : spots) view.setVisibility(View.VISIBLE);
 
         animator = new AnimatorPlayer(createAnimations());
         animator.play();
@@ -130,6 +134,7 @@ public class SpotsDialog extends AlertDialog {
             v.setBackgroundResource(R.drawable.dmax_spots_spot);
             v.setTarget(progressWidth);
             v.setXFactor(-1f);
+            v.setVisibility(View.INVISIBLE);
             progress.addView(v, size, size);
             spots[i] = v;
         }
