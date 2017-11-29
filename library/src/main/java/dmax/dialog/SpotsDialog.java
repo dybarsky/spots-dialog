@@ -13,6 +13,56 @@ import android.widget.TextView;
  */
 public class SpotsDialog extends AlertDialog {
 
+    public static class Builder {
+
+        private Context context;
+        private String message;
+        private int messageId;
+        private int themeId;
+        private boolean cancelable;
+        private OnCancelListener cancelListener;
+
+        public Builder setContext(Context context) {
+            this.context = context;
+            return this;
+        }
+
+        public Builder setMessage(String message) {
+            this.message = message;
+            return this;
+        }
+
+        public Builder setMessage(int messageId) {
+            this.messageId = messageId;
+            return this;
+        }
+
+        public Builder setTheme(int themeId) {
+            this.themeId = themeId;
+            return this;
+        }
+
+        public Builder setCancelable(boolean cancelable) {
+            this.cancelable = cancelable;
+            return this;
+        }
+
+        public Builder setCancelListener(OnCancelListener cancelListener) {
+            this.cancelListener = cancelListener;
+            return this;
+        }
+
+        public AlertDialog build() {
+            return new SpotsDialog(
+                    context,
+                    messageId != 0 ? context.getString(messageId) : message,
+                    themeId != 0 ? themeId : R.style.SpotsDialogDefault,
+                    cancelable,
+                    cancelListener
+            );
+        }
+    }
+
     private static final int DELAY = 150;
     private static final int DURATION = 1500;
 
@@ -21,26 +71,11 @@ public class SpotsDialog extends AlertDialog {
     private AnimatorPlayer animator;
     private CharSequence message;
 
-    public SpotsDialog(Context context) {
-        this(context, R.style.SpotsDialogDefault);
-    }
-
-    public SpotsDialog(Context context, CharSequence message) {
-        this(context);
-        this.message = message;
-    }
-
-    public SpotsDialog(Context context, CharSequence message, int theme) {
-        this(context, theme);
-        this.message = message;
-    }
-
-    public SpotsDialog(Context context, int theme) {
+    private SpotsDialog(Context context, String message, int theme, boolean cancelable, OnCancelListener cancelListener) {
         super(context, theme);
-    }
-
-    public SpotsDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
-        super(context, cancelable, cancelListener);
+        this.message = message;
+        setCancelable(cancelable);
+        setOnCancelListener(cancelListener);
     }
 
     @Override
@@ -72,9 +107,7 @@ public class SpotsDialog extends AlertDialog {
     @Override
     public void setMessage(CharSequence message) {
         this.message = message;
-        if (isShowing()) {
-            initMessage();
-        }
+        if (isShowing()) initMessage();
     }
 
     //~

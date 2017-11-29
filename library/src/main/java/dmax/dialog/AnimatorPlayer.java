@@ -11,7 +11,7 @@ class AnimatorPlayer extends AnimatorListenerAdapter {
     private boolean interrupted = false;
     private Animator[] animators;
 
-    public AnimatorPlayer(Animator[] animators) {
+    AnimatorPlayer(Animator[] animators) {
         this.animators = animators;
     }
 
@@ -20,11 +20,11 @@ class AnimatorPlayer extends AnimatorListenerAdapter {
         if (!interrupted) animate();
     }
 
-    public void play() {
+    void play() {
         animate();
     }
 
-    public void stop() {
+    void stop() {
         interrupted = true;
     }
 
