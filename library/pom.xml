@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.d-max</groupId>
+    <artifactId>spots-dialog</artifactId>
+    <version>0.8</version>
+    <packaging>aar</packaging>
+    <name>spots progress dialog</name>
+    <description>
+        Android AlertDialog with moving spots progress indicator
+    </description>
+    <url>https://github.com/d-max/spots-dialog</url>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>d-max</id>
+            <name>Maksym Dybarskyi</name>
+            <email>maxim.dybarskyy@gmail.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git@github.com:d-max/spots-dialog.git</connection>
+        <developerConnection>scm:git@github.com:d-max/spots-dialog.git</developerConnection>
+        <url>https://github.com/d-max/spots-dialog</url>
+    </scm>
+</project>

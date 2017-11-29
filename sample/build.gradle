@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 repositories {
-    mavenCentral()
-    maven { url "http://oss.sonatype.org/content/groups/staging" }
+    google()
+    jcenter()
 }
 
 android {
@@ -11,17 +11,21 @@ android {
 
     defaultConfig {
         versionName SAMPLE_VERSION_NAME
-        targetSdkVersion 21
+        targetSdkVersion 27
     }
+
+    flavorDimensions "minApi"
 
     productFlavors {
         lollipop {
             minSdkVersion 21
             versionCode SAMPLE_VERSION_CODE_LOLLIPOP
+            dimension "minApi"
         }
         kitkat {
             minSdkVersion 15
             versionCode SAMPLE_VERSION_CODE_KITKAT
+            dimension "minApi"
         }
     }
 
@@ -56,6 +60,6 @@ android {
 }
 
 dependencies {
-//    compile 'com.github.d-max:spots-dialog:0.6'
+//    compile 'com.github.d-max:spots-dialog:0.8'
     compile project(':library')
 }
