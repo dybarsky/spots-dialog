@@ -22,6 +22,8 @@ public class SpotsDialog extends AlertDialog {
         private int themeId;
         private boolean cancelable = true; // default dialog behaviour
         private OnCancelListener cancelListener;
+        private int Duration = 1500;
+        private int Delay = 150;
 
         public Builder setContext(Context context) {
             this.context = context;
@@ -35,6 +37,16 @@ public class SpotsDialog extends AlertDialog {
 
         public Builder setMessage(int messageId) {
             this.messageId = messageId;
+            return this;
+        }
+
+        public Builder setDuration(int Duration) {
+            this.Duration = Duration;
+            return this;
+        }
+
+        public Builder setDelay(int Delay) {
+            this.Delay = Delay;
             return this;
         }
 
@@ -59,23 +71,27 @@ public class SpotsDialog extends AlertDialog {
                     messageId != 0 ? context.getString(messageId) : message,
                     themeId != 0 ? themeId : R.style.SpotsDialogDefault,
                     cancelable,
-                    cancelListener
+                    cancelListener,
+                    Duration,
+                    Delay
             );
         }
     }
 
-    private static final int DELAY = 150;
-    private static final int DURATION = 1500;
+    private int DELAY;
+    private int DURATION;
 
     private int size;
     private AnimatedView[] spots;
     private AnimatorPlayer animator;
     private CharSequence message;
 
-    private SpotsDialog(Context context, String message, int theme, boolean cancelable, OnCancelListener cancelListener) {
+
+    private SpotsDialog(Context context, String message, int theme, boolean cancelable, OnCancelListener cancelListener, int Duration, int Delay) {
         super(context, theme);
         this.message = message;
-
+        DURATION = Duration;
+        DELAY = Delay;
         setCancelable(cancelable);
         if (cancelListener != null) setOnCancelListener(cancelListener);
     }

@@ -7,7 +7,6 @@ repositories {
 
 android {
     compileSdkVersion COMPILE_SDK_VERSION
-    buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdkVersion MIN_SDK_VERSION
@@ -20,6 +19,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildToolsVersion '27.0.3'
 }
 
 task sourcePackage(type: Jar) {
