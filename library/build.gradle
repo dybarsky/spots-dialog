@@ -3,11 +3,15 @@ apply plugin: 'maven'
 
 repositories {
     google()
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.android.support:support-annotations:27.1.1'
 }
 
 android {
     compileSdkVersion COMPILE_SDK_VERSION
-    buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdkVersion MIN_SDK_VERSION

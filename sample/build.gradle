@@ -10,7 +10,6 @@ repositories {
 
 android {
     compileSdkVersion COMPILE_SDK_VERSION
-    buildToolsVersion BUILD_TOOLS_VERSION
 
     defaultConfig {
         versionName SAMPLE_VERSION_NAME

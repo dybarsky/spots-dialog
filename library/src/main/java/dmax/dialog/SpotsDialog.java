@@ -1,10 +1,13 @@
 package dmax.dialog;
 
 import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.StringRes;
+import android.support.annotation.StyleRes;
 import android.view.View;
 import android.widget.TextView;
 
@@ -33,12 +36,12 @@ public class SpotsDialog extends AlertDialog {
             return this;
         }
 
-        public Builder setMessage(int messageId) {
+        public Builder setMessage(@StringRes int messageId) {
             this.messageId = messageId;
             return this;
         }
 
-        public Builder setTheme(int themeId) {
+        public Builder setTheme(@StyleRes int themeId) {
             this.themeId = themeId;
             return this;
         }
@@ -123,7 +126,7 @@ public class SpotsDialog extends AlertDialog {
     }
 
     private void initProgress() {
-        ProgressLayout progress = (ProgressLayout) findViewById(R.id.dmax_spots_progress);
+        ProgressLayout progress = findViewById(R.id.dmax_spots_progress);
         size = progress.getSpotsCount();
 
         spots = new AnimatedView[size];
@@ -143,10 +146,22 @@ public class SpotsDialog extends AlertDialog {
     private Animator[] createAnimations() {
         Animator[] animators = new Animator[size];
         for (int i = 0; i < spots.length; i++) {
-            Animator move = ObjectAnimator.ofFloat(spots[i], "xFactor", 0, 1);
+            final AnimatedView animatedView = spots[i];
+            Animator move = ObjectAnimator.ofFloat(animatedView, "xFactor", 0, 1);
             move.setDuration(DURATION);
             move.setInterpolator(new HesitateInterpolator());
             move.setStartDelay(DELAY * i);
+            move.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    animatedView.setVisibility(View.INVISIBLE);
+                }
+
+                @Override
+                public void onAnimationStart(Animator animation) {
+                    animatedView.setVisibility(View.VISIBLE);
+                }
+            });
             animators[i] = move;
         }
         return animators;
