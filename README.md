@@ -102,9 +102,11 @@ On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround jus
 
 If you're using proguard, add this code to your rules file:
 
+```
 -keep class dmax.dialog.** {
     *;
 }
+```
 
 ===========
 
