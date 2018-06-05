@@ -1,8 +1,8 @@
 # Spots  progress dialog
 
-[![Maven](https://img.shields.io/badge/maven-0.7-brightgreen.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.d-max%7Cspots-dialog%7C0.7%7Caar)
+[![Maven](https://img.shields.io/badge/bintray-1.1-brightgreen.svg)](https://bintray.com/d-max/spots-dialog/d-max.spots-dialog/1.1)
 &nbsp;&nbsp;
-[![Blog Post](https://img.shields.io/badge/blogger-post-yellow.svg)](http://dybarsky.blogspot.com/2015/01/spots-progress-dialog.html)
+[![Blog Post](https://img.shields.io/badge/medium-post-yellow.svg)](https://medium.com/@dybarsky/spots-progress-dialog-490bd2c737b1)
 &nbsp;&nbsp;
 [![PlayStore](https://img.shields.io/badge/Play%20Store-demo-blue.svg)](https://play.google.com/store/apps/details?id=dmax.dialog.sample)
 &nbsp;&nbsp;
@@ -16,10 +16,13 @@ Android AlertDialog with moving spots progress indicator packed as android libra
 
 ### Usage
 
-The library available in maven central repository. You can get it using:
+The library available in maven jcenter repository. You can get it using:
 ```groovy
+repositories {
+    jcenter()
+}
 dependencies {
-    implementation 'com.github.d-max:spots-dialog:0.7@aar'
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
 }
 ```
 Javadoc and sources package [classifiers][3] available too.
@@ -27,27 +30,30 @@ Javadoc and sources package [classifiers][3] available too.
 **Note:** The library requires minimum API level 15.
 
 [SpotsDialog][4] class is an inheritor of a AlertDialog class. You can use it just like simple [AlertDialog][5]. For example:
-```java
-AlertDialog dialog = new SpotsDialog(context);
-dialog.show();
-...
-dialog.dismiss();
-```
-
-**Attention!**
-If you're using *proguard*, add this code to your rules file:
-```
--keep class dmax.dialog.** {
-    *;
+```kotlin
+val dialog: AlertDialog = SpotsDialog(context).apply {
+    show()
 }
+...
+dialog.dismiss()
 ```
-
-===========
 
 ### Customization
 
-Use android styles to customize the dialog.
-Next custom attributes provided:
+There are two ways of customizing dialog: use `SpotsDialog.Builder` class or use custom styles.
+
+```kotlin
+val dialog: AlertDialog = SpotsDialog.Builder()
+    .setContext(this)
+    .setTheme(R.style.CustomStyle)
+    .setMessage(R.string.custom_title)
+    .build()
+    .apply { show() }
+...
+dialog.dismiss()
+```
+
+For styling the next custom attributes provided:
 * DialogTitleAppearance : style reference
 * DialogTitleText : string
 * DialogSpotColor : color
@@ -69,8 +75,8 @@ Provide you own style resource:
 ```
 
 Pass it into constuctor:
-```java
-new SpotsDialog(context, R.style.Custom).show();
+```kotlin
+SpotsDialog(context, R.style.Custom).show()
 ```
 
 Result:
@@ -78,8 +84,8 @@ Result:
 ![Example Image1][2]
 
 If you need to change just a dialogs message, use constructor:
-```java
-new SpotsDialog(context, "Завантаження").show();
+```kotlin
+SpotsDialog(context, "Завантаження").show()
 ```
 
 
@@ -92,9 +98,22 @@ On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround jus
 </resources>
 ```
 
+### Proguard
+
+If you're using proguard, add this code to your rules file:
+
+-keep class dmax.dialog.** {
+    *;
+}
+
 ===========
 
+
 ### Release notes
+
+**[v1.1, June 5th 2018][11]**
+* Builder provided
+* Small fixes
 
 **[v0.7, November 23th 2015][10]**
 * Override message setter
@@ -104,7 +123,6 @@ On the pre-lollipop devices _DialogSpotColor_ item won't work. As workaround jus
 
 **[v0.3, May 5th 2015][8]**
 * Stop animation when dismiss dialog
-
 
 **[v0.2, Feb 10th 2015][7]**
 * Fix issue on pre-lollipop
@@ -154,3 +172,5 @@ Maksym Dybarskyi - http://d-max.info
 [8]: https://github.com/d-max/spots-dialog/releases/tag/v0.3
 [9]: https://github.com/d-max/spots-dialog/releases/tag/v0.4
 [10]: https://github.com/d-max/spots-dialog/releases/tag/v0.7
+[11]: https://github.com/d-max/spots-dialog/releases/tag/v1.1
+
