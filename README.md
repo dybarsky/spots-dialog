@@ -31,26 +31,41 @@ Javadoc and sources package [classifiers][3] available too.
 
 [SpotsDialog][4] class is an inheritor of a AlertDialog class. You can use it just like simple [AlertDialog][5]. For example:
 ```kotlin
-val dialog: AlertDialog = SpotsDialog(context).apply {
-    show()
-}
+val dialog: AlertDialog = SpotsDialog.Builder().setContext(context).build()
+...
+dialog.show()
 ...
 dialog.dismiss()
 ```
 
 ### Customization
 
-There are two ways of customizing dialog: use `SpotsDialog.Builder` class or use custom styles.
+For dialog customization of dialog, like message and cancel listener, use `SpotsDialog.Builder` methods.
 
 ```kotlin
 val dialog: AlertDialog = SpotsDialog.Builder()
     .setContext(this)
-    .setTheme(R.style.CustomStyle)
     .setMessage(R.string.custom_title)
+    .setCancelable(false)
+    ...
     .build()
-    .apply { show() }
+    .apply { 
+        show() 
+    }
 ...
 dialog.dismiss()
+```
+
+For changing dialogs look and feel, create style and pass it ot dialog builder:
+```kotlin
+val dialog: AlertDialog = SpotsDialog.Builder()
+    .Builder()
+    .setContext(context)
+    .setTheme(R.style.Cusom)
+    .build()
+    .apply {
+        show()
+    }
 ```
 
 For styling the next custom attributes provided:
@@ -74,19 +89,9 @@ Provide you own style resource:
 </resources>
 ```
 
-Pass it into constuctor:
-```kotlin
-SpotsDialog(context, R.style.Custom).show()
-```
-
 Result:
 
 ![Example Image1][2]
-
-If you need to change just a dialogs message, use constructor:
-```kotlin
-SpotsDialog(context, "Завантаження").show()
-```
 
 
 **Note:**
