@@ -22,6 +22,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         findViewById(android.R.id.button2).setOnClickListener(this);
         findViewById(android.R.id.button3).setOnClickListener(this);
         findViewById(android.R.id.closeButton).setOnClickListener(this);
+        findViewById(android.R.id.custom).setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +56,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         .build()
                         .show();
                 break;
+            case android.R.id.custom:
+                new SpotsDialog.Builder()
+                        .setContext(this)
+                        .setCanceledOnTouchOutside(true)
+                        .build()
+                        .show();
         }
     }
 }
