@@ -24,6 +24,7 @@ public class SpotsDialog extends AlertDialog {
         private int messageId;
         private int themeId;
         private boolean cancelable = true; // default dialog behaviour
+        private boolean cancelTouchOutside = false; // default dialog behaviour
         private OnCancelListener cancelListener;
 
         public Builder setContext(Context context) {
@@ -51,6 +52,11 @@ public class SpotsDialog extends AlertDialog {
             return this;
         }
 
+        public Builder setCanceledOnTouchOutside(boolean cancelTouchOutside) {
+            this.cancelTouchOutside = cancelTouchOutside;
+            return this;
+        }
+
         public Builder setCancelListener(OnCancelListener cancelListener) {
             this.cancelListener = cancelListener;
             return this;
@@ -62,6 +68,7 @@ public class SpotsDialog extends AlertDialog {
                     messageId != 0 ? context.getString(messageId) : message,
                     themeId != 0 ? themeId : R.style.SpotsDialogDefault,
                     cancelable,
+                    cancelTouchOutside,
                     cancelListener
             );
         }
@@ -75,11 +82,12 @@ public class SpotsDialog extends AlertDialog {
     private AnimatorPlayer animator;
     private CharSequence message;
 
-    private SpotsDialog(Context context, String message, int theme, boolean cancelable, OnCancelListener cancelListener) {
+    private SpotsDialog(Context context, String message, int theme, boolean cancelable, boolean cancelTouchOutside, OnCancelListener cancelListener) {
         super(context, theme);
         this.message = message;
 
         setCancelable(cancelable);
+        setCanceledOnTouchOutside(cancelTouchOutside);
         if (cancelListener != null) setOnCancelListener(cancelListener);
     }
 
@@ -88,7 +96,6 @@ public class SpotsDialog extends AlertDialog {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.dmax_spots_dialog);
-        setCanceledOnTouchOutside(false);
 
         initMessage();
         initProgress();

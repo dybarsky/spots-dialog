@@ -29,4 +29,10 @@
         android:layout_height="wrap_content"
         android:text="@string/show_message_style"/>
 
+    <Button
+        android:id="@android:id/custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_default_cancel_on_touch_outside"/>
+
 </LinearLayout>
