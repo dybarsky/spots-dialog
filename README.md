@@ -1,6 +1,6 @@
 # Spots  progress dialog
 
-[![Maven](https://img.shields.io/badge/bintray-1.1-brightgreen.svg)](https://bintray.com/d-max/spots-dialog/d-max.spots-dialog/1.1)
+[![Maven](https://jitpack.io/v/dybarsky/spots-dialog.svg)](https://jitpack.io/#dybarsky/spots-dialog)
 &nbsp;&nbsp;
 [![Blog Post](https://img.shields.io/badge/medium-post-yellow.svg)](https://medium.com/@dybarsky/spots-progress-dialog-490bd2c737b1)
 &nbsp;&nbsp;
@@ -19,10 +19,10 @@ Android AlertDialog with moving spots progress indicator packed as android libra
 The library available in maven jcenter repository. You can get it using:
 ```groovy
 repositories {
-    jcenter()
+    maven { url "https://jitpack.io" }
 }
 dependencies {
-    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+    implementation "com.github.dybarsky:spots-dialog:v1.2"
 }
 ```
 Javadoc and sources package [classifiers][3] available too.
@@ -118,6 +118,9 @@ If you're using proguard, add this code to your rules file:
 
 ### Release notes
 
+**[v1.2, June 11th 2021][12]**
+* Build system updated for JitPack since jcenter is deprecated
+
 **[v1.1, June 5th 2018][11]**
 * Builder provided
 * Small fixes
@@ -180,4 +183,5 @@ Maksym Dybarskyi - http://d-max.info
 [9]: https://github.com/d-max/spots-dialog/releases/tag/v0.4
 [10]: https://github.com/d-max/spots-dialog/releases/tag/v0.7
 [11]: https://github.com/d-max/spots-dialog/releases/tag/v1.1
+[12]: https://github.com/dybarsky/spots-dialog/releases/tag/v1.2
 
