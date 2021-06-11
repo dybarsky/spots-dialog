@@ -6,8 +6,6 @@ import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.StringRes;
-import android.support.annotation.StyleRes;
 import android.view.View;
 import android.widget.TextView;
 
@@ -36,12 +34,12 @@ public class SpotsDialog extends AlertDialog {
             return this;
         }
 
-        public Builder setMessage(@StringRes int messageId) {
+        public Builder setMessage(int messageId) {
             this.messageId = messageId;
             return this;
         }
 
-        public Builder setTheme(@StyleRes int themeId) {
+        public Builder setTheme(int themeId) {
             this.themeId = themeId;
             return this;
         }
