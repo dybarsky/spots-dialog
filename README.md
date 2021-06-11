@@ -1,6 +1,6 @@
 # Spots  progress dialog
 
-[![Maven](https://jitpack.io/v/Wheelslabsllc/spots-dialog.svg)](https://jitpack.io/#Wheelslabsllc/spots-dialog)
+[![Maven](https://jitpack.io/v/dybarsky/spots-dialog.svg)](https://jitpack.io/#dybarsky/spots-dialog)
 &nbsp;&nbsp;
 [![Blog Post](https://img.shields.io/badge/medium-post-yellow.svg)](https://medium.com/@dybarsky/spots-progress-dialog-490bd2c737b1)
 &nbsp;&nbsp;
@@ -22,7 +22,7 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 dependencies {
-    implementation "com.github.Wheelslabsllc:spots-dialog:v1.2"
+    implementation "com.github.dybarsky:spots-dialog:v1.2"
 }
 ```
 Javadoc and sources package [classifiers][3] available too.
@@ -183,5 +183,5 @@ Maksym Dybarskyi - http://d-max.info
 [9]: https://github.com/d-max/spots-dialog/releases/tag/v0.4
 [10]: https://github.com/d-max/spots-dialog/releases/tag/v0.7
 [11]: https://github.com/d-max/spots-dialog/releases/tag/v1.1
-[12]: https://github.com/Wheelslabsllc/spots-dialog/releases/tag/v1.2
+[12]: https://github.com/dybarsky/spots-dialog/releases/tag/v1.2
 
